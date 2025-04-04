@@ -18,7 +18,7 @@ body{
     /* justify-content: center; */
     border: 2px solid grey;
     background-color: rgb(226, 226, 226);
-    width: 50vw;
+    min-width: 30vw;
     height: 80vh;
     flex-direction: column;
     align-items: center;
@@ -38,13 +38,14 @@ body{
     font-size: 1.5em;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     /* flex: 1 1 auto; */
 }
 
 .sc{
     display: flex;
     flex: 1;
-    font-size: larger;
+    font-size: 1.5em;
     font-family: 'Courier New', Courier, monospace;
 }
 .upper{
@@ -105,4 +106,23 @@ body{
 
 .operator{
     background-color: rgb(255, 166, 0);
+}
+
+.btn.operator:hover, .btn.equal:hover{
+    background-color: rgb(216, 141, 2);
+}
+
+.btn.operator:active, .btn.equal:active{
+    background-color: rgb(216, 141, 2);
+    transform: scale(0.9); 
+}
+
+.btn:hover{
+    background-color: rgb(200, 210, 219);
+}
+
+.btn:active{
+    background-color: rgb(200, 210, 219);
+    transform: scale(0.9); 
+
 }
