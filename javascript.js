@@ -74,11 +74,13 @@ equal.addEventListener("click", (e)=>{
 
 dot.addEventListener("click", ()=>{
     if(a != '' && oper == undefined){
+        if(a.includes('.')) return 0;
         a = a + '.';
         screen.textContent = a;
         return a;
     }
     else if (a != '' && oper != undefined && b != ''){
+        if(b.includes('.')) return 0;
         b = b + '.';
         screen.textContent = b;
         return b;
