@@ -38,11 +38,13 @@ operators.forEach(element => {
 nums.forEach(element => {
     element.addEventListener("click", (num)=>{
         if(oper == undefined){
+            if(a.length>=17) return 0;
         num = Number(element.textContent);
         a+=num;
         screen.textContent = a;
         }
         else{
+            if(b.length >=17) return 0;
             screen.textContent = '';
             num = Number(element.textContent);
             b+=num;
@@ -70,12 +72,30 @@ equal.addEventListener("click", (e)=>{
     }
 });
 
-dot.addEventListener("click", (e)=>{
-    console.log(dot.textContent); //I am considering skipping this one
+dot.addEventListener("click", ()=>{
+    if(a != '' && oper == undefined){
+        a = a + '.';
+        screen.textContent = a;
+        return a;
+    }
+    else if (a != '' && oper != undefined && b != ''){
+        b = b + '.';
+        screen.textContent = b;
+        return b;
+    }
 });
 
-backspace.addEventListener("click", (e)=>{
-    console.log(backspace.textContent);
+backspace.addEventListener("click", ()=>{
+    if(a != '' && oper == undefined){
+        a = a.substring(0, a.length -1);
+        screen.textContent = a;
+        return a;
+    }
+    else if (a != '' && oper != undefined && b != ''){
+        b = b.substring(0, b.length -1);
+        screen.textContent = b;
+        return b;
+    }
 });
 
 clear.addEventListener("click", (e)=>{
